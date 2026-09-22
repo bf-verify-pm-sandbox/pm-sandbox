@@ -1,0 +1,33 @@
+name: 課題・リスク
+description: 課題・リスクを起票する（週次報告に載る）
+title: "[課題] "
+labels: ["課題・リスク"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 種別
+      description: リスクの場合は、タイトルの先頭を [リスク] に直す
+      options:
+        - 課題
+        - リスク
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: 内容
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: 影響
+  - type: textarea
+    id: plan
+    attributes:
+      label: 対応案
+  - type: input
+    id: due
+    attributes:
+      label: 期限

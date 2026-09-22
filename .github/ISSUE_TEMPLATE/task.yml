@@ -1,0 +1,50 @@
+name: 工程の作業
+description: データ移行・リハーサル・ユーザーレビューなどの作業を登録する
+title: "[タスクID] "
+labels: ["移行"]
+body:
+  - type: input
+    id: task_id
+    attributes:
+      label: タスクID
+      description: 例 MIG-001 / UAT-ORD
+    validations:
+      required: true
+  - type: input
+    id: phase
+    attributes:
+      label: 工程名
+      description: 例 データ移行 / ユーザーレビュー
+    validations:
+      required: true
+  - type: dropdown
+    id: size
+    attributes:
+      label: サイズ
+      options:
+        - "S（1人日）"
+        - "M（3人日）"
+        - "L（5人日）"
+        - "XL（8人日）"
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: 作業内容
+    validations:
+      required: true
+  - type: checkboxes
+    id: dod
+    attributes:
+      label: 完了条件
+      description: リードが確認してクローズする
+      options:
+        - label: 作業完了
+        - label: 結果の検証OK
+        - label: 結果と証跡の記録
+        - label: リードの確認完了
+  - type: input
+    id: depends
+    attributes:
+      label: 依存する機能・作業

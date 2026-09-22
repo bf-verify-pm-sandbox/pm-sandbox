@@ -1,0 +1,30 @@
+name: 不具合
+description: 不具合を起票する
+title: "[不具合] "
+labels: ["不具合"]
+body:
+  - type: input
+    id: feature_issue
+    attributes:
+      label: 発生した機能の Issue 番号
+      description: 例 #123
+    validations:
+      required: true
+  - type: textarea
+    id: symptom
+    attributes:
+      label: 事象
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 移行元での結果（期待）
+  - type: textarea
+    id: actual
+    attributes:
+      label: 移行先での結果（実際）
+  - type: textarea
+    id: steps
+    attributes:
+      label: 再現手順

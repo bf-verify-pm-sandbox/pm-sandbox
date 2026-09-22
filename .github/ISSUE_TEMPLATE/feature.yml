@@ -1,0 +1,51 @@
+name: 機能
+description: 機能（サブイシュー）を登録する
+title: "[機能ID] "
+labels: ["開発"]
+body:
+  - type: input
+    id: feature_id
+    attributes:
+      label: 機能ID
+      description: 例 ORD-001
+    validations:
+      required: true
+  - type: input
+    id: business
+    attributes:
+      label: 業務名
+    validations:
+      required: true
+  - type: dropdown
+    id: size
+    attributes:
+      label: サイズ
+      description: S=1 / M=3 / L=5 / XL=8 人日（XL は分割を検討する）
+      options:
+        - "S（1人日）"
+        - "M（3人日）"
+        - "L（5人日）"
+        - "XL（8人日）"
+    validations:
+      required: true
+  - type: textarea
+    id: overview
+    attributes:
+      label: 概要
+    validations:
+      required: true
+  - type: checkboxes
+    id: dod
+    attributes:
+      label: 完了条件
+      description: 各段階が終わったらチェックする
+      options:
+        - label: 実装完了
+        - label: 単体テスト完了
+        - label: 移行元との結果突合OK
+        - label: レビュー完了
+  - type: input
+    id: depends
+    attributes:
+      label: 依存する機能・作業
+      description: 例 #12（待ち関係は、Issue の「Blocked by」でも設定する）

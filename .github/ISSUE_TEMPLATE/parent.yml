@@ -1,0 +1,28 @@
+name: 親Issue（業務・工程）
+description: 業務または工程（機能・作業の入れ物）を登録する
+title: "【業務】"
+body:
+  - type: textarea
+    id: scope
+    attributes:
+      label: 対象範囲
+      description: タイトルは「【業務】業務名」または「【工程】工程名」にする
+    validations:
+      required: true
+  - type: input
+    id: lead
+    attributes:
+      label: リード
+      description: 例 @ユーザー名
+    validations:
+      required: true
+  - type: input
+    id: start_week
+    attributes:
+      label: 着手予定週
+      description: 詳細は Projects の「着手予定日」で管理する
+  - type: input
+    id: end_week
+    attributes:
+      label: 完了予定週
+      description: 詳細は Projects の「完了予定日」で管理する
